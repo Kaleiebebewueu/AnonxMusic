@@ -38,7 +38,7 @@ from config import BANNED_USERS, OWNER_ID
 
 
 @app.on_message(
-    filters.command(["settings", "setting"]) & filters.group & ~BANNED_USERS
+    filters.command(["msettings"]) & filters.group & ~BANNED_USERS
 )
 @language
 async def settings_mar(client, message: Message, _):
@@ -327,7 +327,7 @@ async def authusers_mar(client, CallbackQuery, _):
                     j += 1
                 except:
                     continue
-                msg += f"{j}➤ {user}[<code>{user_id}</code>]\n"
+                msg += f"● {j} ➥ {user}[<code>{user_id}</code>]\n"
                 msg += f"   {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
             upl = InlineKeyboardMarkup(
                 [
