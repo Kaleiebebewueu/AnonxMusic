@@ -1,4 +1,4 @@
-from AnonxMusic.utils.mongo import db
+from AnonxMusic.core.mongo import db
 
 afkdb = db.afk
 
