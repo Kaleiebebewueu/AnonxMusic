@@ -181,6 +181,9 @@ stream_2 : "<b>❖ Sᴛᴀʀᴛᴇᴅ Sᴛʀᴇᴀᴍɪɴɢ |</b>\n\n<b>‣ Sᴛ
 CLOSE_BUTTON  : "⌯ ᴄʟᴏsᴇ ⌯"
 BACK_BUTTON : "↻ ʙᴀᴄᴋ ↺"
 
+NEXT_PAGE : "ɴᴇxᴛ"
+BACK_PAGE : "ʙᴀᴄᴋ"
+
 
 S_B_1 : "⌯ ʌᴅᴅ ᴍᴇ ⌯"
 S_B_2 : "˹ sᴜᴘᴘᴏʀᴛ ˼"
