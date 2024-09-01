@@ -30,7 +30,7 @@ POLICE = [
 "https://graph.org/file/2e3cf4327b169b981055e.jpg",
 ]
 
-@app.on_message(filters.command(["afk"], prefixes=["/", "!", ""]))
+@app.on_message(filters.command(["afk", "off", "bye"], prefixes=["/", "!", "."]))
 async def active_afk(_, message: Message):
     if message.sender_chat:
         return
