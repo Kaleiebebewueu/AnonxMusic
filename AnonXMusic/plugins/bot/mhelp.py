@@ -9,7 +9,7 @@ from AnonXMusic.utils.database import get_lang
 from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
 from AnonXMusic.utils.inline.mhelp import mhelp_back_markup, mprivate_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
-from strings import get_string, helpers
+from strings import get_string, mhelpers
 
 
 @app.on_message(filters.command(["mhelp"]) & filters.private & ~BANNED_USERS)
