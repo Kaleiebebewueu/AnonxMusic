@@ -5,16 +5,16 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
 
 
-def help_pannel(_, START: Union[bool, int] = None):
-    first = [
+def mhelp_pannel(_, START: Union[bool, int] = None):
+    mfirst = [
                  InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close")
     ]
     
-    second = [
+    msecond = [
                  InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data=f"settingsback_helper",),
     ]
     
-    mark = second if START else first
+    mark = msecond if START else mfirst
     upl = InlineKeyboardMarkup(
         [
         [
@@ -48,7 +48,7 @@ def help_pannel(_, START: Union[bool, int] = None):
     return upl
 
 
-def help_back_markup(_):
+def mhelp_back_markup(_):
     upl = InlineKeyboardMarkup(
         [
         [
@@ -59,7 +59,7 @@ def help_back_markup(_):
     return upl
 
 
-def private_help_panel(_):
+def mprivate_help_panel(_):
     buttons = [
         [
             InlineKeyboardButton(text=_["S_B_4"], url=f"https://t.me/{app.username}?start=help",),
