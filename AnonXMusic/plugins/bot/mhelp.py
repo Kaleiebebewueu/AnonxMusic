@@ -58,33 +58,33 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
-    if cb == "hb1":
+    if cb == "mhb1":
         await CallbackQuery.edit_message_text(helpers.MHELP_1, reply_markup=keyboard)
-    elif cb == "hb2":
+    elif cb == "mhb2":
         await CallbackQuery.edit_message_text(helpers.MHELP_2, reply_markup=keyboard)
-    elif cb == "hb3":
+    elif cb == "mhb3":
         await CallbackQuery.edit_message_text(helpers.MHELP_3, reply_markup=keyboard)
-    elif cb == "hb4":
+    elif cb == "mhb4":
         await CallbackQuery.edit_message_text(helpers.MHELP_4, reply_markup=keyboard)
-    elif cb == "hb5":
+    elif cb == "mhb5":
         await CallbackQuery.edit_message_text(helpers.MHELP_5, reply_markup=keyboard)
-    elif cb == "hb6":
+    elif cb == "mhb6":
         await CallbackQuery.edit_message_text(helpers.MHELP_6, reply_markup=keyboard)
-    elif cb == "hb7":
+    elif cb == "mhb7":
         await CallbackQuery.edit_message_text(helpers.MHELP_7, reply_markup=keyboard)
-    elif cb == "hb8":
+    elif cb == "mhb8":
         await CallbackQuery.edit_message_text(helpers.MHELP_8, reply_markup=keyboard)
-    elif cb == "hb9":
+    elif cb == "mhb9":
         await CallbackQuery.edit_message_text(helpers.MHELP_9, reply_markup=keyboard)
-    elif cb == "hb10":
+    elif cb == "mhb10":
         await CallbackQuery.edit_message_text(helpers.MHELP_10, reply_markup=keyboard)
-    elif cb == "hb11":
+    elif cb == "mhb11":
         await CallbackQuery.edit_message_text(helpers.MHELP_11, reply_markup=keyboard)
-    elif cb == "hb12":
+    elif cb == "mhb12":
         await CallbackQuery.edit_message_text(helpers.MHELP_12, reply_markup=keyboard)
-    elif cb == "hb13":
+    elif cb == "mhb13":
         await CallbackQuery.edit_message_text(helpers.MHELP_13, reply_markup=keyboard)
-    elif cb == "hb14":
+    elif cb == "mhb14":
         await CallbackQuery.edit_message_text(helpers.MHELP_14, reply_markup=keyboard)
-    elif cb == "hb15":
+    elif cb == "mhb15":
         await CallbackQuery.edit_message_text(helpers.MHELP_15, reply_markup=keyboard)
