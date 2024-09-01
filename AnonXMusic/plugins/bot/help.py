@@ -89,12 +89,12 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
         
         
-@app.on_callback_query(filters.regex("mbot_cb") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("sachin") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
     await CallbackQuery.edit_message_text(Helper.HELP_M, reply_markup=InlineKeyboardMarkup(BUTTONS.MBUTTON))
 
 
-@app.on_callback_query(filters.regex('managebot123'))
+@app.on_callback_query(filters.regex('sanatani'))
 async def on_back_button(client, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
@@ -104,7 +104,7 @@ async def on_back_button(client, CallbackQuery):
             _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
         )
 
-@app.on_callback_query(filters.regex('mplus'))      
+@app.on_callback_query(filters.regex('music'))      
 async def mb_plugin_button(client, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
