@@ -1,6 +1,8 @@
 from typing import Union
+
 from pyrogram import filters, types
-from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, Message
+
 from AnonXMusic import app
 from AnonXMusic.utils import help_pannel
 from AnonXMusic.utils.database import get_lang
@@ -8,8 +10,7 @@ from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
 from AnonXMusic.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
-from AnonXMusic.help.buttons import BUTTONS
-from AnonXMusic.help.helper import Helper
+
 
 @app.on_message(filters.command(["help"]) & filters.private & ~BANNED_USERS)
 @app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
@@ -87,5 +88,3 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=keyboard)
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
-        
-        
