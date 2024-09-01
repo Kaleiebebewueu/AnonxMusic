@@ -89,7 +89,7 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
         
         
-@app.on_callback_query(filters.regex("sachin") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("sachin_cp") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
     await CallbackQuery.edit_message_text(Helper.HELP_M, reply_markup=InlineKeyboardMarkup(BUTTONS.MBUTTON))
 
