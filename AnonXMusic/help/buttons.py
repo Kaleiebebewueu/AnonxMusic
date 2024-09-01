@@ -9,6 +9,6 @@ class BUTTONS(object):
                   InlineKeyboardButton("+", callback_data="music HELP_HELP3")
                ],
                [
-                  InlineKeyboardButton("⩤", callback_data=f"settings_back_helper"), 
-                  InlineKeyboardButton("⩥", callback_data=f"sanatani settings_back_helper"),
-               ]]
+                  InlineKeyboardButton("⌯ ʙᴀᴄᴋ ⌯", callback_data=f"settingsback_helper",)
+               ]
+    ]
