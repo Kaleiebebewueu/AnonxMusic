@@ -1,15 +1,15 @@
 from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
-from SACHIN_MUSIC import app
-from SACHIN_MUSIC.utils import help_pannel
-from SACHIN_MUSIC.utils.database import get_lang
-from SACHIN_MUSIC.utils.decorators.language import LanguageStart, languageCB
+from AnonXMusic import app
+from AnonXMusic.utils import help_pannel
+from AnonXMusic.utils.database import get_lang
+from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
 from SACHIN_MUSIC.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
-from SACHIN_MUSIC.help.buttons import BUTTONS
-from SACHIN_MUSIC.help.helper import Helper
+from AnonXMusic.help.buttons import BUTTONS
+from AnonXMusic.help.helper import Helper
         
         
 @app.on_callback_query(filters.regex("mbot_cb") & ~BANNED_USERS)
