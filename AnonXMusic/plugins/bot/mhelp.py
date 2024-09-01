@@ -7,7 +7,7 @@ from AnonXMusic import app
 from AnonXMusic.utils import help_pannel
 from AnonXMusic.utils.database import get_lang
 from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
-from AnonXMusic.utils.inline.mhelp import help_back_markup, private_help_panel
+from AnonXMusic.utils.inline.mhelp import mhelp_back_markup, mprivate_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
 
@@ -26,7 +26,7 @@ async def helper_private(
         chat_id = update.message.chat.id
         language = await get_lang(chat_id)
         _ = get_string(language)
-        keyboard = help_pannel(_, True)
+        keyboard = mhelp_pannel(_, True)
         await update.edit_message_text(
             _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
         )
@@ -37,27 +37,19 @@ async def helper_private(
             pass
         language = await get_lang(update.chat.id)
         _ = get_string(language)
-        keyboard = help_pannel(_)
+        keyboard = mhelp_pannel(_)
         await update.reply_photo(
             photo=START_IMG_URL,
             caption=_["help_1"].format(SUPPORT_CHAT),
             reply_markup=keyboard,
         )
 
-
-@app.on_message(filters.command(["mhelp"]) & filters.group & ~BANNED_USERS)
-@LanguageStart
-async def help_com_group(client, message: Message, _):
-    keyboard = private_help_panel(_)
-    await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))
-
-
 @app.on_callback_query(filters.regex("mhelp_callback") & ~BANNED_USERS)
 @languageCB
 async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
-    keyboard = help_back_markup(_)
+    keyboard = mhelp_back_markup(_)
     if cb == "mhb1":
         await CallbackQuery.edit_message_text(helpers.MHELP_1, reply_markup=keyboard)
     elif cb == "mhb2":
