@@ -8,41 +8,8 @@ from AnonXMusic.utils import help_pannel
 from AnonXMusic.utils.database import get_lang
 from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
 from AnonXMusic.utils.inline.mhelp import mhelp_back_markup, mprivate_help_panel
-from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
+from config import BANNED_USERS
 from strings import get_string, mhelpers
-
-
-@app.on_message(filters.command(["mhelp"]) & filters.private & ~BANNED_USERS)
-@app.on_callback_query(filters.regex("msettings_back_helper") & ~BANNED_USERS)
-async def helper_private(
-    client: app, update: Union[types.Message, types.CallbackQuery]
-):
-    is_callback = isinstance(update, types.CallbackQuery)
-    if is_callback:
-        try:
-            await update.answer()
-        except:
-            pass
-        chat_id = update.message.chat.id
-        language = await get_lang(chat_id)
-        _ = get_string(language)
-        keyboard = mhelp_pannel(_, True)
-        await update.edit_message_text(
-            _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
-        )
-    else:
-        try:
-            await update.delete()
-        except:
-            pass
-        language = await get_lang(update.chat.id)
-        _ = get_string(language)
-        keyboard = mhelp_pannel(_)
-        await update.reply_photo(
-            photo=START_IMG_URL,
-            caption=_["help_1"].format(SUPPORT_CHAT),
-            reply_markup=keyboard,
-        )
 
 @app.on_callback_query(filters.regex("mhelp_callback") & ~BANNED_USERS)
 @languageCB
